@@ -42,3 +42,29 @@ export const register = async (req: Request, res: Response) => {
         token: generateToken(newUser._id)
     })
 }
+
+export const login = async (req: Request, res: Response) => {
+    const {email, password} = req.body
+
+    const user = await User.findOne({email})
+
+    if(!user) {
+        res.status(401).json({errors: ["Usuário não encontrado."]})
+        return
+    }
+
+    if(!(await bcrypt.compare(password, user.password))) {
+        res.status(401).json({errors: ["Senha inválida."]})
+        return
+    }
+
+    res.status(200).json({
+        _id: user._id,
+        profileImage: user.profileImage,
+        token: generateToken(user._id)
+    })
+}
+
+const getCurrentUser = async (req: Request, res: Response) => {
+    
+}

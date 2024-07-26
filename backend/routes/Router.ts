@@ -1,9 +1,11 @@
 import express from "express"
 import { Request, Response } from "express"
 
-import {router} from "./UserRoutes"
+import {userRouter} from "./UserRoutes"
 
-router.use("/api/users", router)
+const router = express.Router()
+
+router.use("/api/users", userRouter)
 
 router.get("/", (req: Request, res: Response) => {
     res.send("API is running...")

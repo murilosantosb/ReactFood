@@ -19,3 +19,15 @@ export const userCreateValidation = () => {
 }
 
 
+export const userLoginValidation = () => {
+    return [
+        body("email")
+            .isEmail()
+            .withMessage("O email é obrigatório!"),
+        body("password")
+            .isString()
+            .withMessage("A senha é obrigatória!")
+            .isLength({ min: 6 })  
+            .withMessage("Por padrão as senhas tem 6 caracteres!"),  
+    ]
+}
