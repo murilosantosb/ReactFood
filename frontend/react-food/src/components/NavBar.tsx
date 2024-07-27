@@ -4,12 +4,15 @@ import React from 'react'
 import Image from 'next/image'
 import styled from 'styled-components'
 import { IoMenu } from "react-icons/io5";
+import Sidebar from './Sidebar';
 
 const NavBarContainer = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
+    /* position: relative; */
+    height: 100%;
 
     svg {
         font-size: 2em;
@@ -29,10 +32,11 @@ const NavBar: React.FC = (props: Props) => {
         <Image
             src="/Logo.png"
             alt='Logo'
-            width={130}
-            height={45}
+            width={130.93}
+            height={40}
         />
         <IoMenu />
+        <Sidebar/>
     </NavBarContainer>
   )
 }
