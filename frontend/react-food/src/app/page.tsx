@@ -1,8 +1,18 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client"
+import styled from "styled-components";
+
+// Components
+import Search from "@/components/Search";
+
+const HomeContainer = styled.main`
+  
+`
+
 
 export default function Home() {
   return (
-    <>Hello ReactFood</>
+    <HomeContainer>
+      <Search />
+    </HomeContainer>  
   );
 }
