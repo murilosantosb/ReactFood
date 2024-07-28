@@ -5,13 +5,13 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import { IoMenu } from "react-icons/io5";
 import Sidebar from './Sidebar';
+import { useState } from 'react';
 
 const NavBarContainer = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
-    /* position: relative; */
     height: 100%;
 
     svg {
@@ -27,16 +27,22 @@ const NavBarContainer = styled.nav`
 type Props = {}
 
 const NavBar: React.FC = (props: Props) => {
+    const [isOpen, setIsOpen] = useState<boolean>(false)
+
+    const toogleSidebar = () => {
+        setIsOpen(open => !open)
+    }
+
   return (
     <NavBarContainer>
         <Image
-            src="/Logo.png"
+            src="/Group.png"
             alt='Logo'
-            width={130.93}
-            height={40}
+            width={120}
+            height={35}
         />
-        <IoMenu />
-        <Sidebar/>
+        <IoMenu onClick={toogleSidebar}/>
+        <Sidebar isOpen={isOpen} toggleSidebar={toogleSidebar}/>
     </NavBarContainer>
   )
 }

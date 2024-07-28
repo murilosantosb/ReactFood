@@ -1,30 +1,48 @@
+"use client"
+
 import React from 'react'
-import styled from 'styled-components'
 
-const SidebarContainer = styled.nav`
-    background-color: #c07676;
-    z-index: 1;
-    position: fixed;
-    top: 0;
-    left: 10%;
-    width: 90%;
-    height: 100vh;
-    @media (min-width: 700px) {
-        left: 80%;
-        width: 50%;
-    }
-`
+// Icons and Buttons
+import { GrClose } from "react-icons/gr";
+import IconButton from './IconButton';
+import { IoIosLogOut } from "react-icons/io";
 
 
-type Props = {}
 
-const Sidebar = (props: Props) => {
+// Styles
+import { Overlay, SidebarContainer, SidebarMenu } from "@/components/ui/Sidebar.styles"
+
+// Components
+import GroupLinksSidebar from './GroupLinksSidebar';
+
+type SidebarProps = {
+  isOpen: boolean;
+  toggleSidebar: () => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
+
   return (
-    <SidebarContainer>
-        Sidebar
-    </SidebarContainer>
+    <>
+      <Overlay isOpen={isOpen} onClick={toggleSidebar} />
+      <SidebarContainer isOpen={isOpen}>
+        <div>
+          <span>
+            <h1>Menu</h1>
+            <GrClose onClick={toggleSidebar} size={20}/>
+          </span>
+          <span>
+            <h2>Olá. Faça seu login!</h2>
+            <IconButton variant='primary'>
+              <IoIosLogOut />
+            </IconButton>
+          </span>
+        </div>
+
+        <GroupLinksSidebar />
+      </SidebarContainer>
+    </>
   )
 }
 
 export default Sidebar
-

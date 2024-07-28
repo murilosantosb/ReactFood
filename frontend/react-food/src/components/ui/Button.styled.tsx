@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-interface ButtonProps {
-    variant: "primary"| "primary-round" | "secondary" | "secondary-round",
-    children: React.ReactNode
-}
-
+import { ButtonProps } from "@/types/IconButton";
 
 const primaryStyle = `
     background-color: var(--primary-color);
