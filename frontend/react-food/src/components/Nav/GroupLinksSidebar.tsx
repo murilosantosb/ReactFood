@@ -3,7 +3,7 @@ import React from 'react'
 import { SidebarMenu } from "@/components/ui/Sidebar.styles"
 
 // Components
-import MenuButton from './MenuButton';
+import MenuButton from '../Buttons/MenuButton';
 
 // Icons Sidebar
 import { PiHouseLight } from "react-icons/pi";

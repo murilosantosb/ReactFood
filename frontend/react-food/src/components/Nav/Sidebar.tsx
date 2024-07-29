@@ -4,16 +4,16 @@ import React from 'react'
 
 // Icons and Buttons
 import { GrClose } from "react-icons/gr";
-import IconButton from './IconButton';
+import IconButton from '../Buttons/IconButton';
 import { IoIosLogOut } from "react-icons/io";
 
 
 
 // Styles
-import { Overlay, SidebarContainer, SidebarMenu } from "@/components/ui/Sidebar.styles"
+import { Overlay, SidebarContainer } from "@/components/ui/Sidebar.styles"
 
 // Components
-import GroupLinksSidebar from './GroupLinksSidebar';
+import GroupLinksSidebar from '../Nav/GroupLinksSidebar';
 
 type SidebarProps = {
   isOpen: boolean;

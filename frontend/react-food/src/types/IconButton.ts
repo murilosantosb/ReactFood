@@ -9,3 +9,8 @@ export interface MenuButtonProps {
     variant?: "primary" | "secondary";
     children: React.ReactNode;
 }
+export interface ButtonsProps {
+    variant: "primary" | "secondary" | "tertiary";
+    width?: string;
+    children: React.ReactNode;
+}

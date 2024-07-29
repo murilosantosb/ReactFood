@@ -4,7 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import styled from 'styled-components'
 import { IoMenu } from "react-icons/io5";
-import Sidebar from './Sidebar';
+import Sidebar from "@/components/Nav/Sidebar";
 import { useState } from 'react';
 
 const NavBarContainer = styled.nav`

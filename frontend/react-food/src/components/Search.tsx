@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 // Components
-import IconButton from './IconButton'
+import IconButton from './Buttons/IconButton'
 // Icons
 import { IoIosSearch } from "react-icons/io";
 
