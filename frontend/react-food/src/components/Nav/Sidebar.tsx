@@ -14,6 +14,8 @@ import { Overlay, SidebarContainer } from "@/components/ui/Sidebar.styles"
 
 // Components
 import GroupLinksSidebar from '../Nav/GroupLinksSidebar';
+import { ModalProps } from '@/types/Modal';
+import Modal from '../Modal/Modal';
 
 type SidebarProps = {
   isOpen: boolean;
@@ -21,6 +23,11 @@ type SidebarProps = {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
+
+  const handleLogin = (e: React.MouseEvent) => {
+    e.preventDefault()
+    console.log("Login")
+  }
 
   return (
     <>
@@ -34,9 +41,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           <span>
             <h2>Olá. Faça seu login!</h2>
             <IconButton variant='primary'>
-              <IoIosLogOut />
+              <IoIosLogOut onClick={handleLogin}/>
             </IconButton>
           </span>
+          <Modal variant='primary'>d</Modal>
         </div>
 
         <GroupLinksSidebar />

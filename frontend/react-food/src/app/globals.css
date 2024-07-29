@@ -26,6 +26,6 @@ div.separator {
   width: 100%;
 }
 
-svg {
+svg ,button{
   cursor: pointer;
 }

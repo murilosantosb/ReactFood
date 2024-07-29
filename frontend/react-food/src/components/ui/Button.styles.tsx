@@ -16,6 +16,13 @@ const tertiaryButton = `
     background-color: var(--octonary-color);
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
+    
+    span {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+    }
+
 `
 
 export const Button = styled.button<ButtonsProps>`
@@ -23,7 +30,9 @@ export const Button = styled.button<ButtonsProps>`
     border-radius: 12px;
     text-align: center;
     border: none;
-    font-size: 1.2em;
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 1px;
 
     ${({ variant }) => (variant === "primary" ? primaryButton : variant === "secondary" ? secondaryButton : tertiaryButton)}
     ${({ width }) => (width) ? `width: ${width};` : "width: 133px"}

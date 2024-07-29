@@ -71,6 +71,8 @@ const GroupLinksSidebar : React.FC = () => {
                 <PiPintGlassBold />
                 <p>Refrigerantes</p>
             </MenuButton>     
+
+            <div className='separator'/>
     </SidebarMenu>
   )
 }
