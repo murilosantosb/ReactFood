@@ -24,7 +24,5 @@ export const MenuButtonContainer = styled.section<MenuButtonProps>`
     cursor: pointer;
     color: var(--quaternary-color);
 
-
-    ${({ variant }) => (variant === "primary") && primaryMenuButton}
-    ${({ variant }) => (variant === "secondary") && secondaryMenuButton}
+    ${({ variant }) => (variant === "primary") ? primaryMenuButton : secondaryMenuButton}
 `
