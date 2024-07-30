@@ -36,9 +36,10 @@ export const ModalContainer = styled.section<ModalProps>`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
+  display: ${({ isOpen }) => (isOpen? "flex" : "none")};
   justify-content: center;
   align-items: center;
+  z-index: 2;
 
   ${({ variant }) => (variant === "primary" ? primaryModal : secondaryModal)}
 `
@@ -50,7 +51,7 @@ export const ModalContent = styled.div<ModalProps>`
   width: 90%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   position: relative;
-  z-index: 1000;
+  z-index: 1;
   width: 318px;
 
   h1 {
@@ -68,5 +69,4 @@ export const ModalContent = styled.div<ModalProps>`
   ${({ variant }) => (variant === "primary" ? primaryModal : secondaryModal)}
   ${({ width }) => width && `width: ${width};`}
   ${({ height }) => height && `height: ${height};`}
-
 `

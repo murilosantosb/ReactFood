@@ -23,10 +23,7 @@ const NavBarContainer = styled.nav`
     }
 `
 
-
-type Props = {}
-
-const NavBar: React.FC = (props: Props) => {
+const NavBar: React.FC = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
     const toogleSidebar = () => {

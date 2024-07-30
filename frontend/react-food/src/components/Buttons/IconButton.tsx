@@ -6,9 +6,9 @@ import { ButtonContainer } from '../ui/IconButton.styled'
 // types
 import { ButtonProps } from '../../types/IconButton'
 
-const IconButton: React.FC<ButtonProps> = ({ children, variant }) => {
+const IconButton: React.FC<ButtonProps> = ({ children, variant, onClick }) => {
   return (
-    <ButtonContainer variant={variant}>
+    <ButtonContainer variant={variant} onClick={onClick}>
       {children}
     </ButtonContainer>
   )

@@ -10,8 +10,8 @@ const Modal: React.FC<ModalProps> = ({children, isOpen, toogleModal, variant, wi
 
 
   return (
-    <ModalContainer variant={variant} isOpen={isOpen} toogleModal={toogleModal}>
-      <ModalContent width={width} variant={variant} height={height}>
+    <ModalContainer variant={variant} isOpen={isOpen} onClick={toogleModal}>
+      <ModalContent width={width} variant={variant} height={height} onClick={(e) => e.stopPropagation()}>
         {children}
       </ModalContent>
     </ModalContainer>
