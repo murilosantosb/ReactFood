@@ -3,9 +3,18 @@ import styled from 'styled-components'
 
 interface StatusProps {
     title: string;
-    status: "process" | "finished";
+    status: "process" | "finished" | "discount";
     width?: string;
 }
+
+const StatusDiscount = `
+  width: 60px;
+  padding: 2px;
+  text-align: center;
+  color: var(--octonary-color) !important;
+  font-weight: bold;
+  background-color: var(--primary-color) !important;
+`
 
 const StatusContainer = styled.section<StatusProps>`
     display: flex;
@@ -18,6 +27,8 @@ const StatusContainer = styled.section<StatusProps>`
     width: ${props => props.width ? props.width : "135px"};
     background-color: ${props => props.status === "process" ? "var(--tertiary-color)" : "var(--septenary-color)"};
     color: ${props => props.status === "process" ? "var(--octonary-color)" : "var(--quinary-color)"};
+
+    ${({ status }) => status === "discount" && StatusDiscount}
 `
 
 const Status: React.FC<StatusProps> = ({ status, title }) => {
