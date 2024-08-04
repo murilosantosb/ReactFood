@@ -40,6 +40,7 @@ export const Button = styled.button<ButtonsProps>`
     /* display: flex;
     justify-content: space-between;
     align-items: center; */
+    
 
 
     ${({ variant }) => (variant === "primary" ? primaryButton : variant === "secondary" ? secondaryButton : tertiaryButton)}
