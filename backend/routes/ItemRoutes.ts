@@ -7,6 +7,7 @@ import { createItem } from '../controllers/ItemController'
 // Middleware
 import { validate } from '../middlewares/handleValidation'
 import { upload } from '../middlewares/upload'
+import { itemValidation } from '../middlewares/categoryValidation'
 
 // Routes
-itemRouter.post("/create", upload.single("image"), validate, createItem)
+itemRouter.post("/create", upload.single("image") , createItem)

@@ -5,10 +5,6 @@ const itemSchema = new Schema({
         type: String,
         required: true
     },
-    description: {
-        type: String,
-        required: true
-    },
     price: {
         type: Number,
         required: true
@@ -17,11 +13,7 @@ const itemSchema = new Schema({
         type: String,
         required: true
     },
-    category: {
-        type: String,
-        required: true,
-        enum: ["Sobremesa", "Refrigerante", "Suco"],
-    },
+    category: [{ type: Schema.Types.ObjectId, ref: 'Category'}],
 })
 
 export const Item = mongoose.model("Item", itemSchema);

@@ -27,3 +27,17 @@ export const restaurantValidation = () => {
             .withMessage("Categoria é obrigatório"),                
     ]
 }
+
+export const itemValidation = () => {
+    return[
+        body("name")
+            .isString()
+            .withMessage("Nome do item é obrigatório"),
+        body("price")
+            .isNumeric()
+            .withMessage("Preço do item é obrigatório"),
+        body("category")
+            .isString()
+            .withMessage("Categoria é obrigatório"),            
+    ]
+}

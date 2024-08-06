@@ -1,19 +1,42 @@
 import { Item } from '../models/Item'
 import { Request, Response } from 'express'	
-import mongoose from 'mongoose'
+import { Category } from "../models/Category"
 
 export const createItem = async (req: Request, res: Response) => {
-    const { name, description, price, category } = req.body
+    const { name, price, category } = req.body
     const image = req.file?.filename
 
+    const categories = await Category.findOne({ name: category })
+    const category_id = categories ? categories._id : null
+
     try {
+        if(!category_id) {
+            res.status(422).json({ errors: ["Categoria não encontrada."] })
+        }
+
+        const item = await Item.findOne({ name })
+
+        if(item) {
+            res.status(422).json({ errors: ["Item já cadastrado."] })
+        }
+
         const newItem = await Item.create({
             name,
-            description,
             price,
             image,
-            category
+            category: [category_id]
         })
+
+        if(!newItem) {
+            res.status(422).json({ errors: ["Erro ao criar o item."] })
+            return
+        }
+
+        await Category.updateOne(
+            { _id: category_id },
+            { $push: { restaurants: newItem._id } }
+        )
+
         res.status(201).json(newItem)
 
     } catch (error) {
