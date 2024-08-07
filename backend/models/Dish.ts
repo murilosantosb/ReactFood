@@ -13,8 +13,8 @@ const dishSchema = new Schema({
         type: String,
         required: true,
     },
-    category: [],
-    restaurant: { type: Schema.Types.ObjectId, ref: "Restaurant" },
+    category: String,
+    restaurant: [{ type: Schema.Types.ObjectId, ref: "Restaurant" }],
     description: {
         type: String,
         required: true,
