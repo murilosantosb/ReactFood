@@ -47,3 +47,17 @@ export const createRestaurant = async (req: Request, res: Response) => {
 
     res.status(201).json(newRestaurant)
 }
+
+export const getRestaurantsName = async (req: Request, res: Response) => {
+    const { name } = req.params
+
+    const restaurantName = new RegExp(name, "i")
+
+    const restaurant = await Restaurant.findOne({ name: restaurantName })
+
+    if(!restaurant) {
+       return res.status(404).json({ errors: ["Esse restaurante não existe."] })
+    }
+
+    res.status(200).json({ data: restaurant })
+}

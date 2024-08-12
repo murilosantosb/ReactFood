@@ -24,3 +24,18 @@ export const createCategory = async (req: Request, res: Response) => {
 
     res.status(201).json(newCategory)
 }
+
+
+export const getCategoriesName = async (req: Request, res: Response) => {
+    const { name } = req.params
+
+    const categoryName = new RegExp(name, "i")
+
+    const category = await Category.findOne({ name: categoryName })
+
+    if(!category) {
+        res.status(404).json({ errors: ["Essa categoria não existe."] })
+    }
+
+    res.status(200).json({ data: category })
+}

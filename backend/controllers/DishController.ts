@@ -47,3 +47,23 @@ export const createDish = async (req: Request, res: Response) => {
     }
 
 }
+
+export const getDishesName = async (req: Request, res: Response) => {
+    const { name } = req.params
+
+    try {
+        
+        const dishName = new RegExp(name, "i")
+
+        const dish = await Dish.findOne({ name: dishName })
+
+        if(!dish) {
+            return res.status(404).json({ message: "Esse prato não existe!" })
+        }
+
+        res.status(200).json({ data: dish })
+
+    } catch (error) {
+        res.status(404).json({ message: "Esse prato não existe!" })
+    }
+}

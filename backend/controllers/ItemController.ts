@@ -43,3 +43,23 @@ export const createItem = async (req: Request, res: Response) => {
        res.status(422).json({ errors: ["Erro ao criar o item."] })
     }
 }
+
+export const getItemName = async (req: Request, res: Response) => {
+    const { name } = req.params
+
+    
+    try {
+        const itemName = new RegExp(name, "i")
+
+        const item = await Item.findOne({ name: itemName })
+
+        if(!item) {
+            return res.status(404).json({ errors: ["Esse item não existe."] })
+        }
+
+        res.status(200).json({ data: item })
+        
+    } catch (error) {
+        res.status(404).json({ errors: ["Esse item não existe."] })
+    }
+}

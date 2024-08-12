@@ -7,7 +7,8 @@ export const restaurantRouter = express.Router()
 import { validate } from "../middlewares/handleValidation"
 import { upload } from "../middlewares/upload"
 import { restaurantValidation } from "../middlewares/categoryValidation"
-import { createRestaurant } from "../controllers/RestaurantController"
+import { createRestaurant, getRestaurantsName } from "../controllers/RestaurantController"
 
 // Routes
 restaurantRouter.post("/create", upload.single("image"), restaurantValidation(), validate, createRestaurant)
+restaurantRouter.get("/:name", getRestaurantsName)
