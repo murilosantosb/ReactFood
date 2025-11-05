@@ -48,11 +48,12 @@ export const ModalContent = styled.div<ModalProps>`
   background-color: var(--octonary-color);
   padding: 25px;
   border-radius: 12px;
-  width: 90%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   position: relative;
   z-index: 1;
-  width: 318px;
+  max-width: 450px;
+  width: 95%;
+  
 
   h1 {
     color: var(--quaternary-color);

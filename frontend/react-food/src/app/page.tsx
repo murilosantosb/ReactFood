@@ -1,6 +1,7 @@
 "use client"
 import styled from "styled-components";
 
+
 // Components
 import Search from "@/components/Search";
 import Button from "@/components/Buttons/Button";
