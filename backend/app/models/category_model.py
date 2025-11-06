@@ -11,4 +11,7 @@ class Category(Base):
     
     restaurants = relationship("Restaurant", back_populates="category")
     dishes = relationship("Dish", back_populates="category")
-    drinks = relationship("Drike", back_populates="category")
+    drinks = relationship("Drink", back_populates="category")
+    desserts = relationship("Dessert", back_populates="category")
+    
+    

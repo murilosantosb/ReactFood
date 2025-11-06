@@ -12,8 +12,10 @@ class Dish(Base):
     image_url = Column("image_url", String)
     category_id = Column("category_id", Integer, ForeignKey("categories.id"))
     
-    restaurant = relationship("Restaurant", back_populates="dishes")
+    # restaurant = relationship("Restaurant", back_populates="dishes")
     category = relationship("Category", back_populates="dishes")
+    items = relationship("OrderedItem", back_populates="dishes")
+    
     
     def __init__(self, name, description, price, image_url, category_id):
         self.name = name

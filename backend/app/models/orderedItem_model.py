@@ -12,4 +12,6 @@ class OrderedItem(Base):
     quantity = Column("quantity", Integer)
     subtotal = Column("subtotal", Float)
     
+    dishes = relationship("Dish", back_populates="items")
+    drinks = relationship("Drink", back_populates="items")
     order = relationship("Order", back_populates="items")

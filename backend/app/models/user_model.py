@@ -10,9 +10,9 @@ class User(Base):
     email = Column("email", String, nullable=False)
     
     orders = relationship("Order", back_populates="user")
-    favorites = relationship("Restaurant", back_populates="favorited_by")
+    # favorites = relationship("Restaurant", back_populates="favorited_by")
     
-    def __init__(self, username, email, favorite_restaurants):
+    def __init__(self, username, email):
         self.username = username
         self.email = email
-        self.favorite_restaurants = favorite_restaurants
+        # self.favorite_restaurants = favorite_restaurants

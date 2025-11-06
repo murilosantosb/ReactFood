@@ -10,12 +10,9 @@
 """
 
 from fastapi import FastAPI
+from app.api.v1 import router
 
-app = FastAPI()
+app = FastAPI(debug=True)
 
-
-@app.get("/login")
-async def login(user):
-    if user:
-        return user
+app.include_router(router)
 

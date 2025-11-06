@@ -11,7 +11,7 @@ class Dessert(Base):
     image_url = Column("image_url", String, nullable=False)
     category_id = Column("category_id", Integer, ForeignKey("categories.id"))
     
-    category = relationship("Category", back_populates="dessert")
+    category = relationship("Category", back_populates="desserts")
     
     def __init__(self, name, price, image_url, category_id):
         self.name = name

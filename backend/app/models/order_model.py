@@ -12,7 +12,7 @@ class Order(Base):
     total = Column("total", Float)
     
     user = relationship("User", back_populates="orders")
-    items = relationship("OrderedItem", back_populates="orders")
+    items = relationship("OrderedItem", back_populates="order")
     
     def __init__(self, user_id, date, total):
         self.user_id = user_id

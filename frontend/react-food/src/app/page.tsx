@@ -1,9 +1,9 @@
 "use client"
 import styled from "styled-components";
 
-
+import Teste from "@/components/teste";
 // Components
-import Search from "@/components/Search";
+import Search from "@/components/Search/Search";
 import Button from "@/components/Buttons/Button";
 
 const HomeContainer = styled.main`
@@ -23,6 +23,7 @@ export default function Home() {
       {/* <Banner banner="primary" img="/pizza.png" p1="até" strong="30% de Desconto" p2="em Pizzas"/>
       <Banner banner="secondary" img="/buguer.png" p1="a partir de" strong="R$17,90" p2="em lanches"/> */}
       <Status title="27%" status="discount" />
+      {/* <Teste /> */}
     </HomeContainer>  
   );
 }
