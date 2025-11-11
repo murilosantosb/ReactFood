@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
-// components
+// Components
 import NavBar from "@/components/Nav/NavBar/NavBar";
+
+// Redux
+import { AuthProvider } from "@/components/AuthProvider";
 
 const poppis = Poppins({
   subsets: ["latin"],
@@ -23,8 +26,10 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={poppis.className}>
-        <NavBar />
-        {children}
+        <AuthProvider>
+          <NavBar />
+          {children}
+        </AuthProvider>
         </body>
     </html>
   );

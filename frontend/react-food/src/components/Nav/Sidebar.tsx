@@ -44,8 +44,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
 
   return (
     <>
-      <Overlay isOpen={isOpen || isModalOpen} onClick={handleOverlayClick} />
-      <SidebarContainer isOpen={isOpen}>
+      <Overlay $isOpen={isOpen || isModalOpen} onClick={handleOverlayClick} />
+      <SidebarContainer $isOpen={isOpen}>
         <div>
           <span>
             <h1>Menu</h1>
