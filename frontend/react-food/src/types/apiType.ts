@@ -1,5 +1,6 @@
-export interface apiRequestProps<T = unknown> {
+export interface apiRequestProps<T> {
     endpoint: string;
-    method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
-    body?: unknown
+    method: "get" | "post" | "put" | "patch" | "delete";
+    body?: any;
+    autofetch?: boolean;
 };

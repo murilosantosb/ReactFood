@@ -1,3 +1,4 @@
+"use client"
 import styled from "styled-components";
 
 export const NavBarContainer = styled.nav`
@@ -11,7 +12,15 @@ export const NavBarContainer = styled.nav`
         font-size: 2em;
     }
 
-    @media (min-width: 1200px) {
+    span.navbar-search {
+        display: none;
+    }
+
+    @media (min-width: 1300px) {
         padding: 30px 128px;
+        border-bottom: 2px solid #0000002c;
+        span.navbar-search {
+            display: flex;
+        }
     }
 `

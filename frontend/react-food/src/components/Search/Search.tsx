@@ -7,18 +7,22 @@ import IconButton from '../Buttons/IconButton'
 // Icons
 import { IoIosSearch } from "react-icons/io";
 //Styles
-import { SearchContainer } from './Search.styles';
+import { SearchComponent } from './Search.styles';
 
-const Search = () => {
+interface SearchProps {
+  variant: "primary" | "secondary"
+}
+
+const Search: React.FC<SearchProps> = ({ variant }) => {
   return (
-    <SearchContainer>
-      <input type="text" placeholder='Buscar Restaurantes'/>
-      <div>
-        <IconButton variant='primary'>
+      <SearchComponent>
+        <input type="text" placeholder='Buscar Restaurantes'/>
+        <span>
+          <IconButton variant={variant}>
             <IoIosSearch />
-        </IconButton>
-      </div>
-    </SearchContainer>
+          </IconButton>
+        </span>
+      </SearchComponent>
   )
 }
 

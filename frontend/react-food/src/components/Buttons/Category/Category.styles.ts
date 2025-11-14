@@ -1,3 +1,4 @@
+"use client"
 import styled from "styled-components";
 import { CategoryButtonProps } from "@/types/ButtonType";
 
@@ -37,7 +38,7 @@ export const CategoryButtonContainer = styled.button<CategoryButtonProps>`
     display: flex;
 
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     background-color: var(--octonary-color);
     color: var(--quaternary-color);
     border-radius: 30px;
@@ -45,7 +46,9 @@ export const CategoryButtonContainer = styled.button<CategoryButtonProps>`
     box-shadow: 1px 1px 30px #00000036;
 
     scroll-snap-align: start;
-    padding: 15px 30px;
+    padding: 30px;
+    width: 152px;
+    height: 54px;
     gap: 12px;
 
     font-weight: 500;

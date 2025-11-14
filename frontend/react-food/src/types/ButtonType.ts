@@ -14,6 +14,7 @@ export interface StatusProps {
     title: string;
     status: "process" | "finished" | "discount";
     width?: string;
+    icon?: boolean;
 }
 
 export interface CategoryButtonProps {

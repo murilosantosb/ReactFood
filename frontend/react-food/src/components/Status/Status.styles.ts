@@ -1,12 +1,13 @@
+"use client"
 import styled from "styled-components";
 import { StatusProps } from "@/types/ButtonType";
 
 const StatusDiscount = `
-  width: 60px;
-  padding: 2px;
+  width: 65px;
+  padding: 0px;
   text-align: center;
   color: var(--octonary-color) !important;
-  font-weight: bold;
+  font-weight: 600;
   background-color: var(--primary-color) !important;
 `
 

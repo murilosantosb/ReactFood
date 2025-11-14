@@ -29,3 +29,11 @@ div.separator {
 svg ,button{
   cursor: pointer;
 }
+
+div.search-mobile {
+  display: block;
+
+  @media (min-width: 1300px) {
+    display: none;
+  }
+}

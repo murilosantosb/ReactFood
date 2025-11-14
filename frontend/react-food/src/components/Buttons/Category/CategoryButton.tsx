@@ -13,8 +13,8 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({id, image_url, name}) =>
         <Image 
             src={image_url}
             alt={name}
-            width={40}
-            height={25}
+            width={36}
+            height={36}
         />
         <strong>{name}</strong>
     </CategoryButtonContainer>

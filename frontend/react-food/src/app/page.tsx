@@ -1,38 +1,44 @@
 "use client"
 import styled from "styled-components";
+import { HomeWrapper } from "@/components/Wrappers/Wrapper.styles";
 
 // Components
-import Search from "@/components/Search/Search";
+import SearchContainer from "@/components/Search/SearchContainer";
 import Button from "@/components/Buttons/Button";
 import CategoryButton from "@/components/Buttons/Category/CategoryButton";
+import Order from "@/components/Orders/Order";
+import Orders from "@/components/Orders/Orders";
 
 const HomeContainer = styled.main`
   height: 100vh;
+  padding: 20px;
+
+  @media (min-width: 1300px) {
+    padding: 0px;
+  }
 `
+
 
 
 import IconButton from "@/components/Buttons/IconButton";
 import { MdDone } from "react-icons/md";
 import Banner from "@/components/Banner/Banner";
 import Status from "@/components/Status/Status";
-import { CategoryContainer } from "@/components/Buttons/Category/Category.styles";
+import Category from "@/components/Buttons/Category/Category";
+
 
 export default function Home() {
   return (
     <HomeContainer>
-      <Search />
-      {/* <Banner banner="primary" img="/pizza.png" p1="até" strong="30% de Desconto" p2="em Pizzas"/>
-      <Banner banner="secondary" img="/buguer.png" p1="a partir de" strong="R$17,90" p2="em lanches"/> */}
-      {/* <Status title="27%" status="discount" /> */}
+      <SearchContainer />
+      <HomeWrapper>
+        <Orders />
+      </HomeWrapper>
+      {/* <Category /> */}
+      {/* <Banner banner="primary" img="/pizza.png" p1="até" strong="30% de Desconto" p2="em Pizzas"/> */}
+      {/* <Banner banner="secondary" img="/buguer.png" p1="a partir de" strong="R$17,90" p2="em lanches"/>   */}
+      {/* <Status title="27%" status="discount" />
       {/* <Teste /> */}
-      <CategoryContainer>
-        <CategoryButton name="Pratos" id={1} image_url="/1722811378287 - food.png"/>
-        <CategoryButton name="Pratos" id={1} image_url="/1722811378287 - food.png"/>
-        <CategoryButton name="Pratos" id={1} image_url="/1722811378287 - food.png"/>
-        <CategoryButton name="Pratos" id={1} image_url="/1722811378287 - food.png"/>
-        <CategoryButton name="Pratos" id={1} image_url="/1722811378287 - food.png"/>
-        <CategoryButton name="Pratos" id={1} image_url="/1722811378287 - food.png"/>
-      </CategoryContainer>
     </HomeContainer>  
   );
 }

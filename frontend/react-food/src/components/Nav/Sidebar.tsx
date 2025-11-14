@@ -63,7 +63,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       </SidebarContainer>
       {isModalOpen && (
         <>
-          <Modal variant='primary' isOpen={isModalOpen} toogleModal={toogleModal}>
+          <Modal variant='primary' $isOpen={isModalOpen} toogleModal={toogleModal}>
             <h1>Faça login na plataforma!</h1>
             <p>Conecte-se usando sua conta do Google ou Github</p>
             <span>
