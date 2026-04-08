@@ -25,6 +25,8 @@ import { MdDone } from "react-icons/md";
 import Banner from "@/components/Banner/Banner";
 import Status from "@/components/Status/Status";
 import Category from "@/components/Buttons/Category/Category";
+import { Banners } from "@/components/Banner/Banner.styles";
+import Restaurant from "@/components/Restaurant/Restaurant";
 
 
 export default function Home() {
@@ -33,12 +35,17 @@ export default function Home() {
       <SearchContainer />
       <HomeWrapper>
         <Orders />
+        <Banners>
+          <Banner banner="primary" img="/pizza.png" p1="até" strong="30% de Desconto" p2="em Pizzas"/>
+          <Banner banner="secondary" img="/buguer.png" p1="a partir de" strong="R$17,90" p2="em lanches"/> 
+        </Banners>
+        <Restaurant /> 
       </HomeWrapper>
-      {/* <Category /> */}
-      {/* <Banner banner="primary" img="/pizza.png" p1="até" strong="30% de Desconto" p2="em Pizzas"/> */}
-      {/* <Banner banner="secondary" img="/buguer.png" p1="a partir de" strong="R$17,90" p2="em lanches"/>   */}
-      {/* <Status title="27%" status="discount" />
-      {/* <Teste /> */}
+      <Category />
+      {/* <Category />
+      <Banner banner="primary" img="/pizza.png" p1="até" strong="30% de Desconto" p2="em Pizzas"/>
+      <Banner banner="secondary" img="/buguer.png" p1="a partir de" strong="R$17,90" p2="em lanches"/>  
+      <Status title="27%" status="discount" /> */}
     </HomeContainer>  
   );
 }

@@ -8,8 +8,9 @@ export const BannerContainer = styled.section<BannerProps>`
     align-items: center;
     padding: 20px 25px;
     border-radius: 15px;
+    height: 215px;
     
-    width: ${props => props.width ? props.width : "400px"};
+    width: ${props => props.width ? props.width : "582px"};
     background-color: ${props => props.banner === "primary" ? "var(--primary-color)" : "var(--secondary-color)"};
 
     div {
@@ -35,3 +36,9 @@ export const BannerContainer = styled.section<BannerProps>`
     }
 `
 
+export const Banners = styled.section`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+`
